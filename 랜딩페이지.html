@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>릴스-투-부킹 | 소규모 병원 마케팅</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #f0f0f0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav {
+            display: flex;
+            gap: 40px;
+            font-size: 13px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #666;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav a:hover {
+            color: #2563eb;
+        }
+
+        .cta-button {
+            padding: 10px 20px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 120px 20px 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-emoji {
+            font-size: 48px;
+            margin-bottom: 24px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+            color: #1a1a1a;
+        }
+
+        .hero-highlight {
+            color: #2563eb;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hero-sub {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+
+        .hero-sub strong {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .btn-primary {
+            padding: 14px 32px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            padding: 14px 32px;
+            background: white;
+            color: #2563eb;
+            border: 2px solid #2563eb;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #f0f9ff;
+            transform: translateY(-2px);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 40px;
+            font-weight: 800;
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        /* Section */
+        section {
+            padding: 100px 20px;
+        }
+
+        .section-title {
+            font-size: 44px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            color: #1a1a1a;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 60px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: white;
+        }
+
+        .problem-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .problem-card {
+            padding: 32px;
+            background: #fafafa;
+            border-radius: 12px;
+            border-left: 4px solid #ef4444;
+            transition: all 0.3s;
+        }
+
+        .problem-card:hover {
+            box-shadow: 0 4px 16px rgba(239, 68, 68, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .problem-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .problem-card p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Why Reels Section */
+        .why-reels-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #f3e8ff 100%);
+        }
+
+        .reels-reason-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .reason-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border-top: 4px solid #2563eb;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s;
+        }
+
+        .reason-card:hover {
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .reason-icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .reason-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .reason-card p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .reason-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .reason-highlight {
+            background: #dbeafe;
+            padding: 14px;
+            border-radius: 8px;
+            border-left: 3px solid #2563eb;
+            color: #1e40af;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .reels-strategy-box {
+            background: white;
+            padding: 48px;
+            border-radius: 12px;
+            border-left: 4px solid #2563eb;
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+        }
+
+        .reels-strategy-box h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .reels-strategy-box p {
+            font-size: 14px;
+            color: #666;
+            line-height: 2;
+        }
+
+        .reels-strategy-box p strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            background: white;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .solution-card {
+            background: #f8fafc;
+            padding: 36px;
+            border-radius: 12px;
+            border-top: 4px solid #2563eb;
+            transition: all 0.3s;
+        }
+
+        .solution-card:hover {
+            background: white;
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .solution-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .solution-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .solution-card p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Why Us */
+        .why-section {
+            background: white;
+        }
+
+        .why-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .why-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .comparison-item {
+            padding: 32px;
+            border-radius: 12px;
+        }
+
+        .comparison-bad {
+            background: #fee2e2;
+            border-left: 4px solid #ef4444;
+        }
+
+        .comparison-good {
+            background: #dbeafe;
+            border-left: 4px solid #2563eb;
+        }
+
+        .comparison-item h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        .comparison-item ul {
+            list-style: none;
+            font-size: 13px;
+            color: #666;
+            line-height: 1.9;
+        }
+
+        .comparison-item li {
+            padding: 6px 0;
+        }
+
+        .comparison-item li:before {
+            margin-right: 8px;
+            font-weight: 700;
+        }
+
+        .comparison-bad li:before {
+            content: "✗ ";
+            color: #ef4444;
+        }
+
+        .comparison-good li:before {
+            content: "✓ ";
+            color: #10b981;
+        }
+
+        /* Not Doing */
+        .not-doing {
+            background: #fee2e2;
+            border-left: 4px solid #ef4444;
+            padding: 28px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        .not-doing h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #1a1a1a;
+        }
+
+        .not-doing ul {
+            list-style: none;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .not-doing li {
+            padding: 8px 0;
+            padding-left: 22px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .not-doing li:before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #ef4444;
+            font-weight: 700;
+        }
+
+        /* Cases */
+        .cases-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        .case-card {
+            background: white;
+            padding: 36px;
+            border-radius: 12px;
+            border-top: 4px solid #2563eb;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s;
+        }
+
+        .case-card:hover {
+            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.15);
+            transform: translateY(-6px);
+        }
+
+        .case-icon {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .case-result {
+            font-size: 32px;
+            font-weight: 800;
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        .case-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .case-description {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Onboarding */
+        .onboarding-section {
+            background: white;
+        }
+
+        .onboarding-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .onboarding-step {
+            background: #f8fafc;
+            padding: 36px;
+            border-radius: 12px;
+            border-left: 4px solid #2563eb;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 28px;
+            align-items: start;
+            transition: all 0.3s;
+        }
+
+        .onboarding-step:hover {
+            background: white;
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .step-content p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 14px;
+            line-height: 1.7;
+        }
+
+        .step-checklist {
+            list-style: none;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .step-checklist li {
+            padding: 6px 0;
+            padding-left: 22px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .step-checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        /* Pricing */
+        .pricing-section {
+            background: white;
+        }
+
+        .onboarding-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border: 2px solid #2563eb;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 80px;
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+        }
+
+        .onboarding-box h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        .onboarding-box .price {
+            font-size: 40px;
+            font-weight: 800;
+            color: #2563eb;
+            margin: 16px 0;
+        }
+
+        .onboarding-box p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.8;
+            margin-top: 12px;
+        }
+
+        .onboarding-features {
+            list-style: none;
+            font-size: 13px;
+            color: #666;
+            margin-top: 20px;
+            line-height: 1.9;
+        }
+
+        .onboarding-features li:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+            margin-bottom: 80px;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            border-color: #2563eb;
+            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .pricing-card.featured {
+            border-color: #2563eb;
+            background: linear-gradient(135deg, #f0f9ff 0%, #f8fafc 100%);
+            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.15);
+            transform: scale(1.02);
+        }
+
+        .pricing-label {
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .price {
+            font-size: 48px;
+            font-weight: 800;
+            color: #2563eb;
+            margin: 20px 0;
+        }
+
+        .price-period {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 32px;
+            font-weight: 500;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 32px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            font-size: 13px;
+            color: #666;
+            border-bottom: 1px solid #e5e7eb;
+            line-height: 1.6;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .pricing-cta {
+            margin-top: 32px;
+        }
+
+        .pricing-cta button {
+            width: 100%;
+        }
+
+        /* Addon Section */
+        .addon-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+            padding: 100px 20px;
+        }
+
+        .addon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .addon-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            border-left: 4px solid #2563eb;
+            transition: all 0.3s;
+        }
+
+        .addon-card:hover {
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .addon-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .addon-price {
+            font-size: 22px;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 12px;
+        }
+
+        .addon-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* CTA Final */
+        .cta-final-section {
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .cta-final-section h2 {
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .cta-final-section p {
+            font-size: 16px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .btn-white {
+            padding: 14px 32px;
+            background: white;
+            color: #2563eb;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-white:hover {
+            background: #f0f9ff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #999;
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 12px;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        /* Badge */
+        .badge-new {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-left: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-emoji {
+                font-size: 40px;
+            }
+
+            .section-title {
+                font-size: 32px;
+                margin-bottom: 16px;
+            }
+
+            .section-subtitle {
+                font-size: 16px;
+                margin-bottom: 40px;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .why-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .onboarding-step {
+                grid-template-columns: 1fr;
+            }
+
+            .step-number {
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+            }
+
+            .reels-reason-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reels-strategy-box {
+                padding: 32px;
+            }
+
+            .reels-strategy-box h3 {
+                font-size: 18px;
+            }
+
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .addon-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-final-section h2 {
+                font-size: 32px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">🎯 릴스-투-부킹</div>
+            <nav class="nav">
+                <a href="#문제">문제</a>
+                <a href="#왜릴스">왜 릴스?</a>
+                <a href="#솔루션">솔루션</a>
+                <a href="#온보딩">온보딩</a>
+                <a href="#가격">가격</a>
+            </nav>
+            <button class="cta-button">상담 신청</button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-emoji">🎯</div>
+            <h1>마케팅 해야하는건 알지만<br>어디서부터<br>어떻게<span class="hero-highlight">?</span></h1>
+            <p>소규모 병원을 위한<br><strong>릴스 → 예약</strong> 마케팅</p>
+            
+            <p class="hero-sub">
+                강남 대형 병원과 다른 방법으로 접근해야합니다<br>
+                <strong>소규모 병원 전문</strong> | 월 300만원부터 시작
+            </p>
+
+            <div class="hero-cta">
+                <button class="btn-primary">무료 상담 신청</button>
+                <button class="btn-secondary">문의하기</button>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">+150%</div>
+                    <div class="stat-label">평균 예약 증가율</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3개월</div>
+                    <div class="stat-label">결과 측정 기간</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">96%</div>
+                    <div class="stat-label">고객 재계약률</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="problem-section" id="문제">
+        <div class="container">
+            <h2 class="section-title">당신의 현실</h2>
+            
+            <div class="problem-intro">
+                인스타그램은 해야 하는데... 뭘 콘셉트로? 어떻게 운영해? 정말 예약으로 연결되나?<br>
+                <strong>우리는 이 모든 고민을 정리합니다.</strong>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>📱 인스타그램을 해야 하는데</h3>
+                    <p>콘셉트가 없고, 뭘 올려야 할지도 모르고, 어떻게 운영해야 할지 감이 안 온다.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>👥 마케팅팀이 없다</h3>
+                    <p>원장 + 실무진 2-3명으로 모든 걸 처리하기엔 시간이 부족하다.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>📊 효과가 있는지 모르겠다</h3>
+                    <p>팔로워는 늘었는데... 정말 예약으로 연결되는지 불명확하다.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>💰 비용이 너무 크다</h3>
+                    <p>기존 대행사는 월 800만원 이상. 소규모 병원이 감당하기 어렵다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Reels Section -->
+    <section class="why-reels-section" id="왜릴스">
+        <div class="container">
+            <h2 class="section-title">왜 릴스를 메인으로 해야 할까?</h2>
+            <p class="section-subtitle">
+                소규모 병원의 현실에 맞는<br>
+                가장 효율적인 선택
+            </p>
+
+            <div class="reels-reason-grid">
+                <div class="reason-card">
+                    <span class="reason-icon">💰</span>
+                    <h3>제한된 예산의 극대화</h3>
+                    <p>
+                        블로그, 플레이스, 카카오채널, TikTok... 다양한 채널을 한 번에 관리하려니 시간도 비용도 부족합니다.
+                    </p>
+                    <p class="reason-highlight">
+                        릴스 하나에 집중하면 예산을 3분의 1로 줄이면서도 3배의 효과를 봅니다.
+                    </p>
+                </div>
+
+                <div class="reason-card">
+                    <span class="reason-icon">👥</span>
+                    <h3>관리 부담 최소화</h3>
+                    <p>
+                        원장 + 직원 2-3명으로 운영하는 소규모 병원에서 모든 채널을 관리할 수 없습니다.
+                    </p>
+                    <p class="reason-highlight">
+                        릴스는 일주일에 2개만 올려도 충분합니다. 간단하고 효율적입니다.
+                    </p>
+                </div>
+
+                <div class="reason-card">
+                    <span class="reason-icon">🎬</span>
+                    <h3>신뢰 + 전문성 최고 표현</h3>
+                    <p>
+                        Before & After, 시술 과정, 실제 사례를 시각적으로 보여주는 가장 강력한 포맷입니다.
+                    </p>
+                    <p class="reason-highlight">
+                        글로는 절대 표현할 수 없는 신뢰감을 30초 영상으로 전달합니다.
+                    </p>
+                </div>
+
+                <div class="reason-card">
+                    <span class="reason-icon">📈</span>
+                    <h3>강력한 알고리즘</h3>
+                    <p>
+                        릴스는 인스타그램의 최우선순위 콘텐츠입니다. 팔로워가 적어도 도달률이 높습니다.
+                    </p>
+                    <p class="reason-highlight">
+                        100명의 팔로워로 1000명에게 도달할 수 있는 유일한 방법입니다.
+                    </p>
+                </div>
+
+                <div class="reason-card">
+                    <span class="reason-icon">⚡</span>
+                    <h3>빠른 성과 측정</h3>
+                    <p>
+                        저장 수, 공유 수, 클릭 수로 어떤 콘텐츠가 먹히는지 즉시 파악할 수 있습니다.
+                    </p>
+                    <p class="reason-highlight">
+                        며칠 내에 성과를 확인하고 즉시 전략을 수정할 수 있습니다.
+                    </p>
+                </div>
+
+                <div class="reason-card">
+                    <span class="reason-icon">🔗</span>
+                    <h3>예약까지의 짧은 경로</h3>
+                    <p>
+                        릴스 → 댓글 → DM → 카카오채널 → 예약. 콘텐츠에서 예약까지 경로가 명확합니다.
+                    </p>
+                    <p class="reason-highlight">
+                        블로그 조회수는 많아도 예약으로 연결되지 않습니다. 릴스는 다릅니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="reels-strategy-box">
+                <h3>🎯 우리의 확신</h3>
+                <p>
+                    <strong>릴스 하나에 100%의 에너지를 쏟습니다.</strong><br><br>
+                    대형 병원은 예산이 많아서 여러 채널을 동시에 운영할 수 있습니다.<br>
+                    하지만 소규모 병원은 <strong>한 가지에 집중하는 것</strong>이 승리 전략입니다.<br><br>
+                    릴스 계정을 <strong>브랜드화</strong>하고, 신뢰감을 쌓고, 예약으로 직결시킵니다.<br><br>
+                    <span style="color: #2563eb; font-weight: 700; font-size: 15px;">이것만으로 충분합니다.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="solution-section" id="솔루션">
+        <div class="container">
+            <h2 class="section-title">우리의 방식</h2>
+            <p class="section-subtitle">
+                계정 브랜딩부터 성과 추적까지<br>
+                <span class="hero-highlight">릴스 → 예약</span>에만 집중합니다
+            </p>
+
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-number">1</div>
+                    <h3>계정 브랜딩</h3>
+                    <p>원장님의 캐릭터, 대표 시술, 타겟 고객, 지역 특성에 맞는 정체성 있는 계정을 설계합니다.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">2</div>
+                    <h3>전략적 콘텐츠</h3>
+                    <p>무분별한 촬영은 하지 않습니다. 필요한 콘텐츠만 정확히 기획해서 제작합니다.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">3</div>
+                    <h3>예약 최적화</h3>
+                    <p>네이버 예약, 카카오채널 셋팅으로 클릭 후 예약까지의 경로를 완벽하게 최적화합니다.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">4</div>
+                    <h3>성과 추적</h3>
+                    <p>릴스 조회부터 실제 예약까지 모든 단계를 추적하고 매달 명확한 결과를 보여줍니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why-section">
+        <div class="container">
+            <h2 class="section-title">우리가 다른 이유</h2>
+            
+            <div class="why-content">
+                <div class="why-comparison">
+                    <div class="comparison-item comparison-bad">
+                        <h4>❌ 기존 대행사</h4>
+                        <ul>
+                            <li>월 800만원 이상</li>
+                            <li>블로그 무분별 발행</li>
+                            <li>유명 인플루언서 협업</li>
+                            <li>조회수만 증가</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-item comparison-good">
+                        <h4>✅ 우리</h4>
+                        <ul>
+                            <li>월 300만원부터</li>
+                            <li>전략적 콘텐츠만</li>
+                            <li>계정 브랜딩 (우리 강점)</li>
+                            <li>예약 직접 증가</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="not-doing">
+                    <h4>우리는 이것을 하지 않습니다</h4>
+                    <ul>
+                        <li>갯수 채우기식 콘텐츠 발행</li>
+                        <li>끼워팔기식 블로그 체험단</li>
+                        <li>유명 인플루언서 협업 (소규모 병원에 무의미)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases -->
+    <section class="cases-section">
+        <div class="container">
+            <h2 class="section-title">실제 성과</h2>
+            <p class="section-subtitle">계정 브랜딩이 제대로 되면 이렇게 됩니다</p>
+
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-icon">👩‍⚕️</div>
+                    <div class="case-title">부산 피부과 A원장</div>
+                    <div class="case-result">+340%</div>
+                    <div class="case-description">
+                        계정 브랜딩 + 전략적 릴스<br>
+                        월 예약 4건 → 31건 (6개월)
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-icon">💄</div>
+                    <div class="case-title">대구 성형외과 B원장</div>
+                    <div class="case-result">+280%</div>
+                    <div class="case-description">
+                        신규 채널 런칭 (4개월)<br>
+                        월 10회 → 월 38회 예약
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-icon">🌿</div>
+                    <div class="case-title">광주 의료미용원 C원장</div>
+                    <div class="case-result">+250%</div>
+                    <div class="case-description">
+                        일관된 브랜딩 (3개월)<br>
+                        월 예약 문의 67건 증가
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Onboarding -->
+    <section class="onboarding-section" id="온보딩">
+        <div class="container">
+            <h2 class="section-title">계약 후 진행 과정</h2>
+            <p class="section-subtitle">
+                시작부터 끝까지<br>
+                명확한 절차로 진행합니다
+            </p>
+
+            <div class="onboarding-grid">
+                <div class="onboarding-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>🔍 상황 분석</h3>
+                        <p>당신의 의료원, 타겟 환자, 원장님 캐릭터를 깊이 있게 분석합니다.</p>
+                        <ul class="step-checklist">
+                            <li>의료원 정체성 & 강점 파악</li>
+                            <li>대표 시술 분석</li>
+                            <li>타겟 환자층 정의</li>
+                            <li>경쟁 의료원 조사</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="onboarding-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>🎨 계정 브랜딩</h3>
+                        <p>릴스 계정의 정체성을 명확히 정의합니다.</p>
+                        <ul class="step-checklist">
+                            <li>원장님 캐릭터 포지셔닝</li>
+                            <li>계정 톤 & 콘셉트 정의</li>
+                            <li>색감 & 폰트 결정</li>
+                            <li>프로필 최적화</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="onboarding-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>🔗 예약 최적화</h3>
+                        <p>예약까지의 모든 경로를 설정합니다.</p>
+                        <ul class="step-checklist">
+                            <li>랜딩페이지 제작</li>
+                            <li>카카오채널 셋팅</li>
+                            <li>예약 링크 생성</li>
+                            <li>클릭 추적 설정</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="onboarding-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>📅 운영 계획</h3>
+                        <p>첫 달부터 3개월 로드맵을 그립니다.</p>
+                        <ul class="step-checklist">
+                            <li>월별 콘텐츠 주제 계획</li>
+                            <li>촬영 일정 확정</li>
+                            <li>역할 분담 정의</li>
+                            <li>성과 목표 설정</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section" id="가격">
+        <div class="container">
+            <h2 class="section-title">가격</h2>
+            <p class="section-subtitle">투명하고 현실적인 가격 정책</p>
+
+            <!-- Onboarding Service -->
+            <div class="onboarding-box">
+                <h3>온보딩 서비스 (필수, 일회)</h3>
+                <div class="price">100<span style="font-size: 20px;">만원</span></div>
+                <p>계약 시 포함되는 필수 서비스입니다</p>
+                <ul class="onboarding-features">
+                    <li>상황 분석 & 타겟 정의</li>
+                    <li>계정 브랜딩 설계</li>
+                    <li>랜딩페이지 제작</li>
+                    <li>카카오채널 셋팅</li>
+                    <li>3개월 운영 계획 수립</li>
+                </ul>
+            </div>
+
+            <!-- Monthly Packages -->
+            <h3 style="text-align: center; font-size: 22px; font-weight: 700; margin-bottom: 48px; color: #1a1a1a;">월별 패키지</h3>
+
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-label">기본</div>
+                    <h3>기본 패키지</h3>
+                    <div class="price">300<span style="font-size: 24px;">만원</span></div>
+                    <div class="price-period">/ 월</div>
+                    <ul class="pricing-features">
+                        <li>릴스 6개/월 제작</li>
+                        <li>계정 브랜딩 설계</li>
+                        <li>월간 성과 리포트</li>
+                    </ul>
+                    <div class="pricing-cta">
+                        <button class="btn-secondary">상담 신청</button>
+                    </div>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-label">⭐ 가장 인기<span class="badge-new">신규</span></div>
+                    <h3>표준 패키지</h3>
+                    <div class="price">370<span style="font-size: 24px;">만원</span></div>
+                    <div class="price-period">/ 월</div>
+                    <ul class="pricing-features">
+                        <li>릴스 8개/월 제작</li>
+                        <li>네이버 플레이스 최적화</li>
+                        <li>상세 월간 리포트</li>
+                        <li>광고 소재 3개 제작<span class="badge-new">NEW</span></li>
+                        <li>메타 or 당근 광고 운영 & 효율 관리<span class="badge-new">NEW</span></li>
+                    </ul>
+                    <div class="pricing-cta">
+                        <button class="btn-primary">표준으로 시작</button>
+                    </div>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-label">프리미엄</div>
+                    <h3>프리미엄 패키지</h3>
+                    <div class="price">450<span style="font-size: 24px;">만원</span></div>
+                    <div class="price-period">/ 월</div>
+                    <ul class="pricing-features">
+                        <li>릴스 10개/월 제작</li>
+                        <li>전체 전략 수립</li>
+                        <li>심화 브랜딩</li>
+                        <li>랜딩페이지 최적화</li>
+                        <li>주 2회 미팅</li>
+                        <li>전담 매니저</li>
+                    </ul>
+                    <div class="pricing-cta">
+                        <button class="btn-secondary">상담 신청</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Addons -->
+    <section class="addon-section">
+        <div class="container">
+            <h2 class="section-title">애드온 서비스</h2>
+            <p class="section-subtitle">필요할 때만 추가하세요</p>
+
+            <div class="addon-grid">
+                <div class="addon-card">
+                    <div class="addon-title">📍 네이버 플레이스 최적화</div>
+                    <div class="addon-price">80만원<span style="font-size: 12px;">/월</span></div>
+                    <div class="addon-desc">
+                        지역 검색 1위를 위한 프로필 최적화, 사진 업로드, 리뷰 관리
+                    </div>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-title">🏘️ 당근마켓 마케팅</div>
+                    <div class="addon-price">60만원<span style="font-size: 12px;">/월</span></div>
+                    <div class="addon-desc">
+                        지역 주민 대상 당근마켓 활용으로 지역 신뢰감 극대화
+                    </div>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-title">🎬 추가 릴스</div>
+                    <div class="addon-price">50만원<span style="font-size: 12px;">/5개</span></div>
+                    <div class="addon-desc">
+                        기본 패키지에 릴스를 추가로 원할 때. 5개 단위로 제작
+                    </div>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-title">📊 심화 분석</div>
+                    <div class="addon-price">100만원<span style="font-size: 12px;">/월</span></div>
+                    <div class="addon-desc">
+                        주간 성과 분석 미팅, 전략 수정, 콘텐츠 최적화 컨설팅
+                    </div>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-title">🌐 랜딩페이지 개선</div>
+                    <div class="addon-price">100만원<span style="font-size: 12px;">/월</span></div>
+                    <div class="addon-desc">
+                        기존 랜딩페이지 분석, A/B 테스트, 전환율 최적화
+                    </div>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-title">🎙️ 마이크로 인플루언서</div>
+                    <div class="addon-price">50만원<span style="font-size: 12px;">/1건</span></div>
+                    <div class="addon-desc">
+                        팔로워 5천~2만의 지역 인플루언서와 협업
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-final-section">
+        <div class="container">
+            <h2>지금 시작하세요</h2>
+            <p>첫 상담은 무료입니다<br>
+            당신의 의료원 상황을 분석하고 구체적인 전략을 제시합니다</p>
+            <button class="btn-white">30분 무료 상담 예약</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 릴스-투-부킹. All rights reserved.</p>
+        <p>소규모 병원을 위한 계정 브랜딩 마케팅</p>
+    </footer>
+</body>
+</html>
